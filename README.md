@@ -14,5 +14,5 @@ Your job is to build and serve an end-to-end product that delivers this predicti
 1. Perform Exploratory Data Analysis
 2. Preprocess Data with Sklearn
 3. Build models with SKlearn pipelines
-3. Serialize models and serve it to a web interface with Flask
+4. Serialize models and serve it to a web interface with Flask
 
