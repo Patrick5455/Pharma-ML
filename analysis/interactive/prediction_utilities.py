@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[5]:
+# In[1]:
 
 
 import pandas as pd
@@ -10,6 +10,11 @@ from datetime import datetime
 import seaborn as sns
 import matplotlib.pyplot as plt
 get_ipython().run_line_magic('matplotlib', 'inline')
+import pickle
+
+# predefined modules
+# from prediction_utilities import preprocess
+# from prediction_utilities import preprocess
 
 
 #preprocessing libraries 
@@ -22,7 +27,7 @@ import seaborn as sns
 import numpy as np
 
 
-# In[6]:
+# In[2]:
 
 
 def outlier_vars(data, show_plot=False):
@@ -52,10 +57,10 @@ def outlier_vars(data, show_plot=False):
         return data[outliers]
 
 
-# In[7]:
+# In[3]:
 
 
-def preprocess(data, to_drop=[]):
+def preprocess(data, to_drop=[], save_path='', obj_name='prcsd_data.pkl'):
     
     """
     The preprocess function takes as primary argument the data 
@@ -93,7 +98,7 @@ def preprocess(data, to_drop=[]):
 
     categorical_transformer = Pipeline(steps=[
     ('imputer', SimpleImputer(strategy='constant', fill_value='missing')),
-    #('onehot', OneHotEncoder(handle_unknown='ignore'))
+    ('onehot', OneHotEncoder(handle_unknown='ignore'))
     ])
     
     
@@ -111,10 +116,15 @@ def preprocess(data, to_drop=[]):
     
     trans_data = my_pipeline.fit_transform(data)
     
-    return pd.DataFrame(trans_data, columns=columns) 
+    if save_path:
+        pickle_out = open(save_path+obj_name, 'wb')
+        pickle.dump(trans_data, pickle_out)
+        pickle_out.close()
+    
+    return pd.DataFrame(trans_data, columns=columns)
 
 
-# In[8]:
+# In[4]:
 
 
 def change_datatype(data, dtype, col_list, date_col_name='Date'):
@@ -129,6 +139,24 @@ def change_datatype(data, dtype, col_list, date_col_name='Date'):
         else:
             data[date_col_name] = pd.to_datetime(data.Date)
     return data
+
+
+# In[5]:
+
+
+def save_load_model (action, model=None, model_name='new_model.pickle',
+                          path = ''):
+    
+    if action == "wb":
+        pickle_out = open(path+model_name,action)
+        pickle.dump(model, pickle_out)
+        pickle_out.close() 
+    
+    elif action=="rb":
+        pickle_in = open(path+model_name,action)
+        model=pickle.load(pickle_in)
+    
+    return model
 
 
 # In[ ]:
