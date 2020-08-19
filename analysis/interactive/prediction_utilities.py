@@ -98,7 +98,7 @@ def preprocess(data, to_drop=[], save_path='', obj_name='prcsd_data.pkl'):
 
     categorical_transformer = Pipeline(steps=[
     ('imputer', SimpleImputer(strategy='constant', fill_value='missing')),
-    ('onehot', OneHotEncoder(handle_unknown='ignore'))
+   # ('onehot', OneHotEncoder(handle_unknown='ignore'))
     ])
     
     
