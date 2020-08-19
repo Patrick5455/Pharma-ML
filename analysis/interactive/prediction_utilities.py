@@ -1,7 +1,19 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[8]:
+
+# def import_libraries():
+from sklearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import StandardScaler, OneHotEncoder, RobustScaler
+from sklearn.compose import ColumnTransformer
+import pandas as pd
+import seaborn as sns
+import numpy as np
+
+
+# In[6]:
 
 
 def outlier_vars(data, show_plot=False):
@@ -13,6 +25,8 @@ def outlier_vars(data, show_plot=False):
     show_plot can be set to True to output pairplots of outlier columns
     
     """
+    
+    #import_libraries()
     
     outliers = [] 
     Q1 = data.quantile(0.25)
@@ -31,7 +45,7 @@ def outlier_vars(data, show_plot=False):
         return data[outliers]
 
 
-# In[2]:
+# In[9]:
 
 
 def preprocess(data, to_drop=[]):
@@ -47,6 +61,15 @@ def preprocess(data, to_drop=[]):
     
     3. Encodes categorical values to numerical values
     """
+    
+    from sklearn.pipeline import Pipeline
+    from sklearn.impute import SimpleImputer
+    from sklearn.preprocessing import StandardScaler, OneHotEncoder, RobustScaler
+    from sklearn.compose import ColumnTransformer
+    import pandas as pd
+    import seaborn as sns
+    import numpy as np
+
     
     columns = data.columns.to_list()
     
@@ -68,7 +91,7 @@ def preprocess(data, to_drop=[]):
     numerical_transformer = Pipeline(steps=[
     ('imputer', SimpleImputer(strategy='median')),
     ('scaler', RobustScaler())
-    ])
+    ]) 
     # missing_values = np.nan
     
 # Bundle preprocessing for numerical and categorical data
@@ -81,13 +104,14 @@ def preprocess(data, to_drop=[]):
     my_pipeline = Pipeline(steps=[('preprocessor', preprocessor) ])
     
     for col in to_drop:
-        columns.remove(col)
-    print('Hello')
+        columns.remove(col) 
     
     trans_data = my_pipeline.fit_transform(data)
-    return pd.DataFrame( trans_data, columns=columns) 
+    
+    return pd.DataFrame(trans_data, columns=columns) 
 
-
+x = Pipeline(steps=[('imputer', SimpleImputer(strategy='most_frequent', fill_value='missing'))])
+print(x)
 # In[ ]:
 
 
