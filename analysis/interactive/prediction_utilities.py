@@ -1,9 +1,18 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[8]:
+# In[5]:
 
-# def import_libraries():
+
+import pandas as pd
+import numpy as np
+from datetime import datetime
+import seaborn as sns
+import matplotlib.pyplot as plt
+get_ipython().run_line_magic('matplotlib', 'inline')
+
+
+#preprocessing libraries 
 from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler, OneHotEncoder, RobustScaler
@@ -26,8 +35,6 @@ def outlier_vars(data, show_plot=False):
     
     """
     
-    #import_libraries()
-    
     outliers = [] 
     Q1 = data.quantile(0.25)
     Q3 = data.quantile(0.75)
@@ -45,7 +52,7 @@ def outlier_vars(data, show_plot=False):
         return data[outliers]
 
 
-# In[9]:
+# In[7]:
 
 
 def preprocess(data, to_drop=[]):
@@ -54,7 +61,8 @@ def preprocess(data, to_drop=[]):
     The preprocess function takes as primary argument the data 
     and peform the following stepwise transformations to it:
     
-    1. impute missing values of numerical and categorical columns 
+    1. impute missing val
+    ues of numerical and categorical columns 
     using median and constant values respectively
     
     2. scales dataset using the RobustScaler (robust to outlier values present in this dataset)
@@ -62,39 +70,34 @@ def preprocess(data, to_drop=[]):
     3. Encodes categorical values to numerical values
     """
     
-    from sklearn.pipeline import Pipeline
-    from sklearn.impute import SimpleImputer
-    from sklearn.preprocessing import StandardScaler, OneHotEncoder, RobustScaler
-    from sklearn.compose import ColumnTransformer
-    import pandas as pd
-    import seaborn as sns
-    import numpy as np
-
-    
     columns = data.columns.to_list()
     
     # split data to numeric vs categorical
     numeric_features = data.select_dtypes(include=[
         'int64', 'float64']).columns
     
+    
+    
     if len(to_drop) > 0:
+        data = data.drop(to_drop, axis=1)
         categorical_features = data.select_dtypes(include=[
-        'object']).drop(to_drop, axis=1).columns
-        print(categorical_features)
+        'object']).columns
+        print(categorical_features) 
     else: 
         categorical_features = data.select_dtypes(include=[
         'object']).columns
         
-    categorical_transformer = Pipeline(steps=[
-    ('imputer', SimpleImputer(strategy='most_frequent', fill_value='missing'))])
-    
     numerical_transformer = Pipeline(steps=[
     ('imputer', SimpleImputer(strategy='median')),
-    ('scaler', RobustScaler())
-    ]) 
-    # missing_values = np.nan
+    ('scaler', RobustScaler())])
+
+    categorical_transformer = Pipeline(steps=[
+    ('imputer', SimpleImputer(strategy='constant', fill_value='missing')),
+    #('onehot', OneHotEncoder(handle_unknown='ignore'))
+    ])
     
-# Bundle preprocessing for numerical and categorical data
+    
+    # Bundle preprocessing for numerical and categorical data
     preprocessor = ColumnTransformer(
     transformers=[
         ('num', numerical_transformer, numeric_features),
@@ -110,8 +113,24 @@ def preprocess(data, to_drop=[]):
     
     return pd.DataFrame(trans_data, columns=columns) 
 
-x = Pipeline(steps=[('imputer', SimpleImputer(strategy='most_frequent', fill_value='missing'))])
-print(x)
+
+# In[8]:
+
+
+def change_datatype(data, dtype, col_list, date_col_name='Date'):
+    """
+    This converts specified columns names of a data to the specified data type
+    It also uses the name od the date column of the dataset to know the data columns
+    ans convert to datetime object
+    """
+    for i in col_list:
+        if i != date_col_name:
+            data = data.astype({i:dtype})
+        else:
+            data[date_col_name] = pd.to_datetime(data.Date)
+    return data
+
+
 # In[ ]:
 
 
