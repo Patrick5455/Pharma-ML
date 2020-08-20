@@ -10,12 +10,13 @@ def load_model(path="web/models/", model_name=''):
     return model
 
 
+user = {"username": "Miguel"}
+
+
 @app.route('/')
 @app.route('/home')
 def home():
-    return "Hello, World!"
-    #return render_template("index.html")
-
+    return render_template("about.html")
 
 # @app.route("/about_us", methods=['GET'])
 # def about():

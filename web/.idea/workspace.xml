@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e460914-b415-4914-9f94-3ccbb5c92fa8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/predictweb.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../analysis/interactive/Prediction.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../analysis/interactive/Prediction.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../analysis/interactive/prediction_utilities.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../analysis/interactive/prediction_utilities.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../analysis/interactive/prediction_utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/../analysis/interactive/prediction_utilities.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,12 +24,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1gJteMhlHEGM7mxB5ny5mcJqG6f" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -56,10 +56,17 @@
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="167" y="235" width="732" height="644" key="#Inspections" timestamp="1597899218711">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="167" y="235" width="732" height="644" key="#Inspections/67.27.1853.1053@67.27.1853.1053" timestamp="1597899218711" />
+    <state x="227" y="352" width="613" height="416" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597907464558">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="227" y="352" width="613" height="416" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1597907464558" />
   </component>
 </project>
