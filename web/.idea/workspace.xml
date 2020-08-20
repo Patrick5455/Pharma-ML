@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e460914-b415-4914-9f94-3ccbb5c92fa8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/models.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/analysis.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/prediction.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../analysis/interactive/Prediction.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../analysis/interactive/Prediction.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../analysis/interactive/prediction_utilities.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../analysis/interactive/prediction_utilities.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../analysis/interactive/prediction_utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/../analysis/interactive/prediction_utilities.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,5 +50,11 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="167" y="235" width="732" height="644" key="#Inspections" timestamp="1597899218711">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="167" y="235" width="732" height="644" key="#Inspections/67.27.1853.1053@67.27.1853.1053" timestamp="1597899218711" />
   </component>
 </project>

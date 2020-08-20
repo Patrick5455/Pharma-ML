@@ -1,0 +1,4 @@
+About Models
+- Time-series Prediction
+- Sales Prediction
+- Customer Churn Prediction
