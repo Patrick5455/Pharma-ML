@@ -9,6 +9,12 @@ def home():
     return render_template("home.html", model=model)
 
 
+@app.route("/about_us", methods=['GET'])
+def home():
+    model = "Serve Model"
+    return render_template("about.html", model=model)
+
+
 @app.route("/predict", methods=['POST'])
 def prediction():
     return render_template("predictions.html")
