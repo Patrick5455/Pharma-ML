@@ -176,7 +176,17 @@ def save_load_model (action, model=None, model_name='new_model.pickle',
 # In[7]:
 
 
-def fill_na(data):
+def fill_na(data, num_type='median'):
+    
+    
+    """
+    Fill categorical clumns containing missing vlaues with mode
+    
+    Fill numerical  clumns containing missing vlaues with specified type
+    
+    median is default
+    
+    """
     cat = categorical_features = data.select_dtypes(include=[
         'object']).columns
     
@@ -185,9 +195,48 @@ def fill_na(data):
     
     for col in cat:
         data[col].fillna(data[col].mode()[0], inplace=True) 
+        
 
-    for col in num:
-        data[col].fillna(data[col].median(), inplace=True) 
+    if num_type == "median":
+        
+        for col in num:
+            data[col].fillna(data[col].median(), inplace=True)
+    
+    if num_type == "mean":
+        
+        for col in num:
+            data[col].fillna(data[col].mean(), inplace=True)
+            
+    if num_type == "mode":
+        
+        for col in num:
+            data[col].fillna(data[col].mode()[0], inplace=True)
+        
+    return data
+
+
+# In[8]:
+
+
+def extract_dates(data, date_col_name='Date', season=False):
+    
+    """
+    Extracts various date types from a date column
+    
+    If season is specified, adds column for season
+    """
+    
+    data["Month"] = data[date_col_name].dt.month
+    data["Quarter"] = data[date_col_name].dt.quarter
+    data["Year"] = data[date_col_name].dt.year
+    data["Day"] = data[date_col_name].dt.day
+    data["Week"] = data[date_col_name].dt.week
+    
+    if season:
+        data["Season"] = np.where(data["Month"].isin([3,4,5]),"Spring",
+        np.where(data["Month"].isin([6,7,8]),"Summer",np.where(data["Month"].isin
+        ([9,10,11]),"Fall",np.where(data["Month"].isin([12,1,2]),"Winter","None"))))
+        
         
     return data
 
