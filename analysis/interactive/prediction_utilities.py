@@ -20,8 +20,10 @@ import pickle
 #preprocessing libraries 
 from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import StandardScaler, OneHotEncoder, RobustScaler
+from sklearn.preprocessing import StandardScaler, OneHotEncoder, RobustScaler, LabelEncoder
 from sklearn.compose import ColumnTransformer
+
+
 import pandas as pd
 import seaborn as sns
 import numpy as np
@@ -87,7 +89,7 @@ def preprocess(data, to_drop=[], save_path='', obj_name='prcsd_data.pkl'):
         data = data.drop(to_drop, axis=1)
         categorical_features = data.select_dtypes(include=[
         'object']).columns
-        print(categorical_features) 
+        #print(categorical_features) 
     else: 
         categorical_features = data.select_dtypes(include=[
         'object']).columns
@@ -97,8 +99,8 @@ def preprocess(data, to_drop=[], save_path='', obj_name='prcsd_data.pkl'):
     ('scaler', RobustScaler())])
 
     categorical_transformer = Pipeline(steps=[
-    ('imputer', SimpleImputer(strategy='constant', fill_value='missing')),
-   # ('onehot', OneHotEncoder(handle_unknown='ignore'))
+    ('imputer', SimpleImputer(strategy='most_frequent', missing_values=np.nan)),
+        ('onehot', OneHotEncoder(handle_unknown='ignore'))
     ])
     
     
@@ -127,6 +129,18 @@ def preprocess(data, to_drop=[], save_path='', obj_name='prcsd_data.pkl'):
 # In[4]:
 
 
+def model_pipelines(preprocessor,model_algos=[]):
+    for algo in model_algos:
+        pipe = Pipeline(steps=[('preprocessor', preprocessor),
+                      ('classifier', algo)])
+        pipe.fit(X_train, y_train)   
+        print(classifier)
+        print("model score: %.3f" % pipe.score(X_test, y_test))
+
+
+# In[5]:
+
+
 def change_datatype(data, dtype, col_list, date_col_name='Date'):
     """
     This converts specified columns names of a data to the specified data type
@@ -141,7 +155,7 @@ def change_datatype(data, dtype, col_list, date_col_name='Date'):
     return data
 
 
-# In[5]:
+# In[6]:
 
 
 def save_load_model (action, model=None, model_name='new_model.pickle',
@@ -157,6 +171,25 @@ def save_load_model (action, model=None, model_name='new_model.pickle',
         model=pickle.load(pickle_in)
     
     return model
+
+
+# In[7]:
+
+
+def fill_na(data):
+    cat = categorical_features = data.select_dtypes(include=[
+        'object']).columns
+    
+    num = numeric_features = data.select_dtypes(include=[
+        'int64', 'float64']).columns
+    
+    for col in cat:
+        data[col].fillna(data[col].mode()[0], inplace=True) 
+
+    for col in num:
+        data[col].fillna(data[col].median(), inplace=True) 
+        
+    return data
 
 
 # In[ ]:
