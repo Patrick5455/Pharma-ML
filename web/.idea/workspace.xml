@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e460914-b415-4914-9f94-3ccbb5c92fa8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../analysis/interactive/Prediction.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../analysis/interactive/Prediction.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../analysis/interactive/prediction_utilities.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../analysis/interactive/prediction_utilities.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../analysis/interactive/prediction_utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/../analysis/interactive/prediction_utilities.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
