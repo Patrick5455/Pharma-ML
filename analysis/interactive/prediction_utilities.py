@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[22]:
 
 
 import pandas as pd
@@ -29,7 +29,7 @@ import seaborn as sns
 import numpy as np
 
 
-# In[2]:
+# In[23]:
 
 
 def outlier_vars(data, show_plot=False):
@@ -59,7 +59,7 @@ def outlier_vars(data, show_plot=False):
         return data[outliers]
 
 
-# In[3]:
+# In[24]:
 
 
 def preprocess(data, to_drop=[], save_path='', obj_name='prcsd_data.pkl'):
@@ -99,8 +99,8 @@ def preprocess(data, to_drop=[], save_path='', obj_name='prcsd_data.pkl'):
     ('scaler', RobustScaler())])
 
     categorical_transformer = Pipeline(steps=[
-    ('imputer', SimpleImputer(strategy='most_frequent', missing_values=np.nan)),
-        ('onehot', OneHotEncoder(handle_unknown='ignore'))
+    #('imputer', SimpleImputer(strategy='most_frequent', missing_values=np.nan)),
+        ('onehot', LabelEncoder())
     ])
     
     
@@ -126,7 +126,7 @@ def preprocess(data, to_drop=[], save_path='', obj_name='prcsd_data.pkl'):
     return pd.DataFrame(trans_data, columns=columns)
 
 
-# In[4]:
+# In[25]:
 
 
 def model_pipelines(preprocessor,model_algos=[]):
@@ -138,7 +138,7 @@ def model_pipelines(preprocessor,model_algos=[]):
         print("model score: %.3f" % pipe.score(X_test, y_test))
 
 
-# In[5]:
+# In[26]:
 
 
 def change_datatype(data, dtype, col_list, date_col_name='Date'):
@@ -155,7 +155,7 @@ def change_datatype(data, dtype, col_list, date_col_name='Date'):
     return data
 
 
-# In[6]:
+# In[27]:
 
 
 def save_load_model (action, model=None, model_name='new_model.pickle',
@@ -173,7 +173,7 @@ def save_load_model (action, model=None, model_name='new_model.pickle',
     return model
 
 
-# In[7]:
+# In[28]:
 
 
 def fill_na(data, num_type='median'):
@@ -215,7 +215,7 @@ def fill_na(data, num_type='median'):
     return data
 
 
-# In[8]:
+# In[29]:
 
 
 def extract_dates(data, date_col_name='Date', season=False):
@@ -239,6 +239,12 @@ def extract_dates(data, date_col_name='Date', season=False):
         
         
     return data
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:
