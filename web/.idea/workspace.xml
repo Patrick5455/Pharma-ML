@@ -2,32 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e460914-b415-4914-9f94-3ccbb5c92fa8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/static/analysisChart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/visuals/r1/schoolholiday_sales.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/visuals/r1/seasonality_sales.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/visuals/r1/stateholiday_sales.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/visuals/r1/tms_day.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/visuals/r1/tms_duo_year.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/visuals/r1/tms_month.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/visuals/r1/tms_year.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/visuals/r2/assort_sales.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/visuals/r2/open_close_customer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/visuals/r2/open_close_sales.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/visuals/r2/promo_cust_corr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/visuals/r2/promo_sales_corr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/visuals/r2/sales_cust_corr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/visuals/r2/sales_promo_corr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/base3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/pred_charts.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/prediction_notes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/prediction_notes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/analysis.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/analysis.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base2.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/cust_churn.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/cust_churn.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/sales_forecast.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/sales_forecast.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/time_series.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/time_series.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
