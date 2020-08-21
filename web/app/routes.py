@@ -1,19 +1,28 @@
 from app import app
 import numpy as np
+import datetime
 from flask import Flask, render_template, flash, redirect, request
 from app.forms import LoginForm
 from app.prediction_notes import sales_detail, \
     sales_title, cust_detail, cust_title, time_detail, \
     time_title, analysis_detail, analysis_title, business_questions
 import pickle
+from app.models.model_classes import Preprocessing, Regressor
 
 
-def load_model(path="app/models/21-08-2020-16-32-31-00.pkl", model_name=''):
-    pickle_in = open(path + model_name, "rb")
-    model = pickle.load(pickle_in)
 
-    return model
+class CustomUnpickler(pickle.Unpickler):
 
+    def find_class(self, module, name):
+        try:
+            return super().find_class(__name__, name)
+        except AttributeError:
+            return super().find_class(module, name)
+
+
+model = CustomUnpickler(open("app/models/model1.pkl", 'rb')).load()
+
+# model = pickle.load(open("app/models/model1.pkl", "rb"))
 
 user = {"username": "Miguel"}
 
@@ -48,12 +57,19 @@ def about():
 def predict():
     # to:do add logic to determine which model to load based the type pf prediction
 
-
-
     model_result = request.form.values()
+    features = []
+    for val in model_result:
+        if val is datetime:
+            features.append(datetime)
+        else:
+            features.append(int(val))
 
-    model = load_model()
-    return render_template("prediction.html", model=model)
+    # model = load_model(model_name="21-08-2020-16-32-31-00.pkl")
+
+    prediction = model.predict(features)
+
+    return render_template("prediction.html", prediction=prediction)
 
 
 @app.route("/analysis", methods=['GET'])
