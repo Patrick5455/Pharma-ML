@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+<<<<<<< HEAD
 # In[22]:
 
 
@@ -30,6 +31,9 @@ import numpy as np
 
 
 # In[23]:
+=======
+# In[1]:
+>>>>>>> fef695eaa11f3a653a112b9933845269faaceb0d
 
 
 def outlier_vars(data, show_plot=False):
@@ -59,17 +63,28 @@ def outlier_vars(data, show_plot=False):
         return data[outliers]
 
 
+<<<<<<< HEAD
 # In[24]:
 
 
 def preprocess(data, to_drop=[], save_path='', obj_name='prcsd_data.pkl'):
+=======
+# In[2]:
+
+
+def preprocess(data, to_drop=[]):
+>>>>>>> fef695eaa11f3a653a112b9933845269faaceb0d
     
     """
     The preprocess function takes as primary argument the data 
     and peform the following stepwise transformations to it:
     
+<<<<<<< HEAD
     1. impute missing val
     ues of numerical and categorical columns 
+=======
+    1. impute missing values of numerical and categorical columns 
+>>>>>>> fef695eaa11f3a653a112b9933845269faaceb0d
     using median and constant values respectively
     
     2. scales dataset using the RobustScaler (robust to outlier values present in this dataset)
@@ -83,6 +98,7 @@ def preprocess(data, to_drop=[], save_path='', obj_name='prcsd_data.pkl'):
     numeric_features = data.select_dtypes(include=[
         'int64', 'float64']).columns
     
+<<<<<<< HEAD
     
     
     if len(to_drop) > 0:
@@ -90,10 +106,17 @@ def preprocess(data, to_drop=[], save_path='', obj_name='prcsd_data.pkl'):
         categorical_features = data.select_dtypes(include=[
         'object']).columns
         #print(categorical_features) 
+=======
+    if len(to_drop) > 0:
+        categorical_features = data.select_dtypes(include=[
+        'object']).drop(to_drop, axis=1).columns
+        print(categorical_features)
+>>>>>>> fef695eaa11f3a653a112b9933845269faaceb0d
     else: 
         categorical_features = data.select_dtypes(include=[
         'object']).columns
         
+<<<<<<< HEAD
     numerical_transformer = Pipeline(steps=[
     ('imputer', SimpleImputer(strategy='median')),
     ('scaler', RobustScaler())])
@@ -105,6 +128,18 @@ def preprocess(data, to_drop=[], save_path='', obj_name='prcsd_data.pkl'):
     
     
     # Bundle preprocessing for numerical and categorical data
+=======
+    categorical_transformer = Pipeline(steps=[
+    ('imputer', SimpleImputer(strategy='most_frequent', fill_value='missing'))])
+    
+    numerical_transformer = Pipeline(steps=[
+    ('imputer', SimpleImputer(strategy='median')),
+    ('scaler', RobustScaler())
+    ])
+    # missing_values = np.nan
+    
+# Bundle preprocessing for numerical and categorical data
+>>>>>>> fef695eaa11f3a653a112b9933845269faaceb0d
     preprocessor = ColumnTransformer(
     transformers=[
         ('num', numerical_transformer, numeric_features),
@@ -114,6 +149,7 @@ def preprocess(data, to_drop=[], save_path='', obj_name='prcsd_data.pkl'):
     my_pipeline = Pipeline(steps=[('preprocessor', preprocessor) ])
     
     for col in to_drop:
+<<<<<<< HEAD
         columns.remove(col) 
     
     trans_data = my_pipeline.fit_transform(data)
@@ -245,6 +281,13 @@ def extract_dates(data, date_col_name='Date', season=False):
 
 
 
+=======
+        columns.remove(col)
+    print('Hello')
+    
+    trans_data = my_pipeline.fit_transform(data)
+    return pd.DataFrame( trans_data, columns=columns) 
+>>>>>>> fef695eaa11f3a653a112b9933845269faaceb0d
 
 
 # In[ ]:
