@@ -18,9 +18,12 @@
     <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-</head>
+<link rel="stylesheet" href="{{ url_for('static', filename='static/style.css') }}">
+
+  </head>
 
 
+  <body style="background: white;">
 <!--  Navbar-->
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
   <a class="navbar-brand" href="/">Rossmann Analytics Team</a>
@@ -65,14 +68,10 @@
         {% endfor %}
       </ul>
 
-<!--      <hr class="my-4">-->
-<!--      <p>The Project encompasses Exploratory Data Analysis (EDA) & Visualizations and Machine Learning.</p>-->
-<!--      <p class="lead">-->
-<!--        <a class="btn btn-primary btn-lg" href="/analysis" role="button">Analysis</a>-->
-<!--        <a class="btn btn-primary btn-lg" href="/time" role="button">Predictions</a>-->
-<!--      </p>-->
     </div>
 
+
+ </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

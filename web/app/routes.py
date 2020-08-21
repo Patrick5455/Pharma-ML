@@ -1,5 +1,6 @@
 from app import app
-from flask import Flask, render_template, flash, redirect
+import numpy as np
+from flask import Flask, render_template, flash, redirect, request
 from app.forms import LoginForm
 from app.prediction_notes import sales_detail, \
     sales_title, cust_detail, cust_title, time_detail, \
@@ -7,7 +8,7 @@ from app.prediction_notes import sales_detail, \
 import pickle
 
 
-def load_model(path="web/models/", model_name=''):
+def load_model(path="app/models/21-08-2020-16-32-31-00.pkl", model_name=''):
     pickle_in = open(path + model_name, "rb")
     model = pickle.load(pickle_in)
 
@@ -44,8 +45,12 @@ def about():
 # predictions and analysis views
 
 @app.route("/predict", methods=['POST'])
-def prediction():
+def predict():
     # to:do add logic to determine which model to load based the type pf prediction
+
+
+
+    model_result = request.form.values()
 
     model = load_model()
     return render_template("prediction.html", model=model)
@@ -78,13 +83,7 @@ def sales_forecast():
 
 @app.route("/pred_charts", methods=['GET'])
 def show_charts(ana_type):
-
     return render_template("pred_charts.html")
-
-
-
-
-
 
 # if __name__ == '__main__':
 #     app.run(host='localhost', port=3030, debug=True)
