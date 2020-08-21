@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e460914-b415-4914-9f94-3ccbb5c92fa8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/prediction_notes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/base2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/cust_churn.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/sales_forecast.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/time_series.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/analysis.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/analysis.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +26,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Python Script" />
       </list>
     </option>
@@ -29,6 +44,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -90,6 +106,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="167" y="235" width="732" height="644" key="#Inspections/67.27.1853.1053@67.27.1853.1053" timestamp="1597899218711" />
+    <state x="128" y="197" width="800" height="719" key="#Plugins" timestamp="1597992418070">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="128" y="197" width="800" height="719" key="#Plugins/67.27.1853.1053@67.27.1853.1053" timestamp="1597992418070" />
     <state x="227" y="352" width="622" height="416" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597927087376">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -110,5 +130,9 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="919" height="274" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1597909991807" />
+    <state x="196" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1597992219029">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="196" y="259" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1597992219029" />
   </component>
 </project>

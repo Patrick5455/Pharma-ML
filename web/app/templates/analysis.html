@@ -1,26 +1,34 @@
-{% extends "base.html" %}
+{% extends "base2.html" %}
 
 {% block content %}
 
     <h1>Exploratory Data Analysis of Rossman Pharmaceuticals</h1>
 
-    <h3>Univariate Analysis</h3>
+<!--    <h3>Univariate Analysis</h3>-->
 
-    <p>Machine Learning for Prediction and good wine</p>
+<!--    <p>Machine Learning for Prediction and good wine</p>-->
 
-    <h3>Bivariate Analysis</h3>
-    <ul>
-        <li>John Lotome</li>
-        <li>Ridwan Amure</li>
-        <li>Patrick Ojunde</li>
-    </ul>
+<!--    <h3>Bivariate Analysis</h3>-->
+<!--    <ul>-->
+<!--        <li>John Lotome</li>-->
+<!--        <li>Ridwan Amure</li>-->
+<!--        <li>Patrick Ojunde</li>-->
+<!--    </ul>-->
 
 
-     <h3>About Models</h3>
-    <ul>
-        <li>Time-series Prediction</li>
-        <li>Sales Prediction</li>
-        <li>Customer Churn Prediction</li>
-    </ul>
+<!--     <h3>About Models</h3>-->
+<!--    <ul>-->
+<!--        <li>Time-series Prediction</li>-->
+<!--        <li>Sales Prediction</li>-->
+<!--        <li>Customer Churn Prediction</li>-->
+<!--    </ul>-->
+
+<div class="container">
+    <canvas id="myChart"></canvas>
+</div>
+
+<script>
+    let myChart = document.getElementById('myChart').getContext('2d')
+</script>
 
 {% endblock %}
