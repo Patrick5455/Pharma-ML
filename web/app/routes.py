@@ -35,7 +35,7 @@ def login():
     return render_template("login.html", title="Sign In", form=form)
 
 
-@app.route("/about_us", methods=['GET'])
+@app.route("/about", methods=['GET'])
 def about():
     model = "Serve Model"
     return render_template("about.html", model=model)
@@ -74,6 +74,12 @@ def cust_churn():
 def sales_forecast():
     return render_template("sales_forecast.html", prediction_name=sales_title,
                            prediction_detail=sales_detail)
+
+
+@app.route("/pred_charts", methods=['GET'])
+def show_charts(ana_type):
+
+    return render_template("pred_charts.html")
 
 
 

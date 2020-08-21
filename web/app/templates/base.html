@@ -43,14 +43,14 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-  <a class="navbar-brand" href="{{ url_for('home')}}">Rossmann Analytics Team</a>
+  <a class="navbar-brand" href="{{ url_for('home') }}">Rossmann Analytics Team</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="{{ url_for('about_us') }}">About Project<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{ url_for('about') }}">About Project<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{{ url_for('analysis') }}">Analysis</a>
@@ -63,9 +63,9 @@
           Predictions
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="/time">Time Series</a>
-          <a class="dropdown-item" href="/sales">Sales Forecast</a>
-          <a class="dropdown-item" href="/cust">Customer Churn</a>
+          <a class="dropdown-item" href="{{ url_for('time_series') }}">Time Series</a>
+          <a class="dropdown-item" href="{{ url_for('sales_forecast') }}">Sales Forecast</a>
+          <a class="dropdown-item" href="{{ url_for('cust_churn') }}">Customer Churn</a>
         </div>
       </li>
     </ul>
@@ -82,8 +82,8 @@
       <hr class="my-4">
       <p>The Project encompasses Exploratory Data Analysis (EDA) & Visualizations and Machine Learning.</p>
       <p class="lead">
-        <a class="btn btn-primary btn-lg" href="/analysis" role="button">Analysis</a>
-        <a class="btn btn-primary btn-lg" href="/time" role="button">Predictions</a>
+        <a class="btn btn-primary btn-lg" href="{{ url_for('analysis') }}" role="button">Analysis</a>
+        <a class="btn btn-primary btn-lg" href="{{ url_for('time_series') }}" role="button">Predictions</a>
 
 <!--         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
 <!--          Predictions-->

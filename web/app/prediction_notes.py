@@ -12,5 +12,9 @@ cust_detail = "This Model predicts customer churn i.e the number of customers " 
 analysis_title = "Exploratory Data Analysis"
 analysis_detail = "Exploratory Data Analysis to answer the following business questions:"
 
-business_questions =["1. ", "2. ", "3. ", "4. "
+business_questions =["Seasonality in Sales ",
+                     "Holiday Effects on Sales and Customer Growth",
+                     "Customer Behaviour",
+                     "Correlation between Sales, Customer and Promo",
+                     "Sales and Assortment"
                                           ""]
