@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+<<<<<<< HEAD
+# In[22]:
 
 
 import pandas as pd
@@ -29,7 +30,10 @@ import seaborn as sns
 import numpy as np
 
 
-# In[2]:
+# In[23]:
+=======
+# In[1]:
+>>>>>>> fef695eaa11f3a653a112b9933845269faaceb0d
 
 
 def outlier_vars(data, show_plot=False):
@@ -59,17 +63,40 @@ def outlier_vars(data, show_plot=False):
         return data[outliers]
 
 
+<<<<<<< HEAD
 # In[3]:
 
 
 def preprocess(data, to_drop=[], save_path='', obj_name='prcsd_data.pkl'):
+=======
+<<<<<<< HEAD
+# In[24]:
+
+
+def preprocess(data, to_drop=[], save_path='', obj_name='prcsd_data.pkl'):
+=======
+# In[2]:
+
+
+def preprocess(data, to_drop=[]):
+>>>>>>> fef695eaa11f3a653a112b9933845269faaceb0d
+>>>>>>> wip
     
     """
     The preprocess function takes as primary argument the data 
     and peform the following stepwise transformations to it:
     
+<<<<<<< HEAD
     1. impute missing val
     ues of numerical and categorical columns 
+=======
+<<<<<<< HEAD
+    1. impute missing val
+    ues of numerical and categorical columns 
+=======
+    1. impute missing values of numerical and categorical columns 
+>>>>>>> fef695eaa11f3a653a112b9933845269faaceb0d
+>>>>>>> wip
     using median and constant values respectively
     
     2. scales dataset using the RobustScaler (robust to outlier values present in this dataset)
@@ -83,6 +110,10 @@ def preprocess(data, to_drop=[], save_path='', obj_name='prcsd_data.pkl'):
     numeric_features = data.select_dtypes(include=[
         'int64', 'float64']).columns
     
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> wip
     
     
     if len(to_drop) > 0:
@@ -90,21 +121,54 @@ def preprocess(data, to_drop=[], save_path='', obj_name='prcsd_data.pkl'):
         categorical_features = data.select_dtypes(include=[
         'object']).columns
         #print(categorical_features) 
+<<<<<<< HEAD
+=======
+=======
+    if len(to_drop) > 0:
+        categorical_features = data.select_dtypes(include=[
+        'object']).drop(to_drop, axis=1).columns
+        print(categorical_features)
+>>>>>>> fef695eaa11f3a653a112b9933845269faaceb0d
+>>>>>>> wip
     else: 
         categorical_features = data.select_dtypes(include=[
         'object']).columns
         
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> wip
     numerical_transformer = Pipeline(steps=[
     ('imputer', SimpleImputer(strategy='median')),
     ('scaler', RobustScaler())])
 
     categorical_transformer = Pipeline(steps=[
+<<<<<<< HEAD
     ('imputer', SimpleImputer(strategy='most_frequent', missing_values=np.nan)),
         ('onehot', OneHotEncoder(handle_unknown='ignore'))
+=======
+    #('imputer', SimpleImputer(strategy='most_frequent', missing_values=np.nan)),
+        ('onehot', LabelEncoder())
+>>>>>>> wip
     ])
     
     
     # Bundle preprocessing for numerical and categorical data
+<<<<<<< HEAD
+=======
+=======
+    categorical_transformer = Pipeline(steps=[
+    ('imputer', SimpleImputer(strategy='most_frequent', fill_value='missing'))])
+    
+    numerical_transformer = Pipeline(steps=[
+    ('imputer', SimpleImputer(strategy='median')),
+    ('scaler', RobustScaler())
+    ])
+    # missing_values = np.nan
+    
+# Bundle preprocessing for numerical and categorical data
+>>>>>>> fef695eaa11f3a653a112b9933845269faaceb0d
+>>>>>>> wip
     preprocessor = ColumnTransformer(
     transformers=[
         ('num', numerical_transformer, numeric_features),
@@ -114,6 +178,10 @@ def preprocess(data, to_drop=[], save_path='', obj_name='prcsd_data.pkl'):
     my_pipeline = Pipeline(steps=[('preprocessor', preprocessor) ])
     
     for col in to_drop:
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> wip
         columns.remove(col) 
     
     trans_data = my_pipeline.fit_transform(data)
@@ -126,7 +194,7 @@ def preprocess(data, to_drop=[], save_path='', obj_name='prcsd_data.pkl'):
     return pd.DataFrame(trans_data, columns=columns)
 
 
-# In[4]:
+# In[25]:
 
 
 def model_pipelines(preprocessor,model_algos=[]):
@@ -138,7 +206,7 @@ def model_pipelines(preprocessor,model_algos=[]):
         print("model score: %.3f" % pipe.score(X_test, y_test))
 
 
-# In[5]:
+# In[26]:
 
 
 def change_datatype(data, dtype, col_list, date_col_name='Date'):
@@ -155,7 +223,7 @@ def change_datatype(data, dtype, col_list, date_col_name='Date'):
     return data
 
 
-# In[6]:
+# In[27]:
 
 
 def save_load_model (action, model=None, model_name='new_model.pickle',
@@ -173,10 +241,20 @@ def save_load_model (action, model=None, model_name='new_model.pickle',
     return model
 
 
-# In[7]:
+# In[28]:
 
 
-def fill_na(data):
+def fill_na(data, num_type='median'):
+    
+    
+    """
+    Fill categorical clumns containing missing vlaues with mode
+    
+    Fill numerical  clumns containing missing vlaues with specified type
+    
+    median is default
+    
+    """
     cat = categorical_features = data.select_dtypes(include=[
         'object']).columns
     
@@ -185,11 +263,66 @@ def fill_na(data):
     
     for col in cat:
         data[col].fillna(data[col].mode()[0], inplace=True) 
+        
 
-    for col in num:
-        data[col].fillna(data[col].median(), inplace=True) 
+    if num_type == "median":
+        
+        for col in num:
+            data[col].fillna(data[col].median(), inplace=True)
+    
+    if num_type == "mean":
+        
+        for col in num:
+            data[col].fillna(data[col].mean(), inplace=True)
+            
+    if num_type == "mode":
+        
+        for col in num:
+            data[col].fillna(data[col].mode()[0], inplace=True)
         
     return data
+<<<<<<< HEAD
+=======
+
+
+# In[29]:
+
+
+def extract_dates(data, date_col_name='Date', season=False):
+    
+    """
+    Extracts various date types from a date column
+    
+    If season is specified, adds column for season
+    """
+    
+    data["Month"] = data[date_col_name].dt.month
+    data["Quarter"] = data[date_col_name].dt.quarter
+    data["Year"] = data[date_col_name].dt.year
+    data["Day"] = data[date_col_name].dt.day
+    data["Week"] = data[date_col_name].dt.week
+    
+    if season:
+        data["Season"] = np.where(data["Month"].isin([3,4,5]),"Spring",
+        np.where(data["Month"].isin([6,7,8]),"Summer",np.where(data["Month"].isin
+        ([9,10,11]),"Fall",np.where(data["Month"].isin([12,1,2]),"Winter","None"))))
+        
+        
+    return data
+
+
+# In[ ]:
+
+
+
+=======
+        columns.remove(col)
+    print('Hello')
+    
+    trans_data = my_pipeline.fit_transform(data)
+    return pd.DataFrame( trans_data, columns=columns) 
+>>>>>>> fef695eaa11f3a653a112b9933845269faaceb0d
+>>>>>>> wip
 
 
 # In[ ]:
