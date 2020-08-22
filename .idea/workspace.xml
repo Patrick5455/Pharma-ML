@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2e460914-b415-4914-9f94-3ccbb5c92fa8" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1gJteMhlHEGM7mxB5ny5mcJqG6f" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+=======
+>>>>>>> 3e77357629ec90d220009c878d042df0d5dc6587
+=======
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+>>>>>>> wip
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/templates" />
+      <recent name="$PROJECT_DIR$/templates" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="routes" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="web" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/routes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.routes" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2e460914-b415-4914-9f94-3ccbb5c92fa8" name="Default Changelist" comment="" />
+      <created>1597844616632</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597844616632</updated>
+    </task>
+    <servers />
+  </component>
+<<<<<<< HEAD
+<<<<<<< HEAD
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+=======
+>>>>>>> 3e77357629ec90d220009c878d042df0d5dc6587
+=======
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="167" y="235" width="732" height="644" key="#Inspections" timestamp="1597899218711">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="167" y="235" width="732" height="644" key="#Inspections/67.27.1853.1053@67.27.1853.1053" timestamp="1597899218711" />
+    <state x="128" y="197" width="800" height="719" key="#Plugins" timestamp="1597992418070">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="128" y="197" width="800" height="719" key="#Plugins/67.27.1853.1053@67.27.1853.1053" timestamp="1597992418070" />
+    <state x="227" y="352" width="622" height="416" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597927087376">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="227" y="352" width="622" height="416" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1597927087376" />
+    <state width="919" height="274" key="GridCell.Tab.0.bottom" timestamp="1597909991807">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="919" height="274" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1597909991807" />
+    <state width="919" height="274" key="GridCell.Tab.0.center" timestamp="1597909991807">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="919" height="274" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1597909991807" />
+    <state width="919" height="274" key="GridCell.Tab.0.left" timestamp="1597909991807">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="919" height="274" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1597909991807" />
+    <state width="919" height="274" key="GridCell.Tab.0.right" timestamp="1597909991807">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="919" height="274" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1597909991807" />
+    <state x="196" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1597992219029">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="196" y="259" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1597992219029" />
+  </component>
+>>>>>>> wip
+</project>
