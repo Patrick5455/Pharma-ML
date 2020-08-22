@@ -4,4 +4,6 @@
 *.pkl
 *.config
 =======
->>>>>>> fef695eaa11f3a653a112b9933845269faaceb0d
+>>>>>>> fef695eaa11f3a653a112b9933845269faaceb0d*
+*.xml
+*.idea
