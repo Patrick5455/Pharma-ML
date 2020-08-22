@@ -28,9 +28,12 @@ class CustomUnpickler(pickle.Unpickler):
 
 model = CustomUnpickler(open("app/models/model1.pkl", 'rb')).load()
 
+# with open('app/models/model1.pkl','rb') as fh:
+#     model = pickle.load(fh)
+
 #model = pickle.load(open("app/models/model1.pkl", "rb"))
 
-user = {"username": "Miguel"}
+# user = {"username": "Miguel"}
 
 
 # other web views
