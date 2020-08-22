@@ -84,7 +84,7 @@ def predict():
 
     prediction = model.predict(data)
 
-    return render_template("prediction.html", prediction=prediction)
+    return render_template("prediction.html", prediction="prediction")
 
 
 @app.route("/analysis", methods=['GET'])
