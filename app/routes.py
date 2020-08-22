@@ -28,7 +28,7 @@ class CustomUnpickler(pickle.Unpickler):
 
 model = CustomUnpickler(open("app/models/model1.pkl", 'rb')).load()
 
-# model = pickle.load(open("app/models/model1.pkl", "rb"))
+#model = pickle.load(open("app/models/model1.pkl", "rb"))
 
 user = {"username": "Miguel"}
 
