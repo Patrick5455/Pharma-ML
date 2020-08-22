@@ -3,47 +3,32 @@
 {% block content %}
 
 
-<div class="login">
-	<h1>Sales Prediction</h1>
+ <div class="login">
+	<h1>Sales Forecasting</h1>
 
      <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post" class="form-control form-control-md" >
-    <div class="form-group">
-    <label for="customers">No of Customers</label>
-    <input type="text" class="form-control" id="customers" aria-describedby="emailHelp">
-<!--    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
- <label for="open">Open</label>
-    <input type="text" class="form-control" id="open" aria-describedby="emailHelp">
-      <label for="promo">Promo</label>
-    <input type="text" class="form-control" id="promo" aria-describedby="emailHelp">
-      <label for="input 4">Promo 2</label>
-    <input type="text" class="form-control" id="input 4" aria-describedby="emailHelp">
-      <label for="stateHoliday">State Holiday</label>
-    <input type="text" class="form-control" id="stateHoliday" aria-describedby="emailHelp">
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Customers" placeholder="Customers" required="required" />
+        <input type="text" name="Open" placeholder="Open" required="required" />
+        <input type="text" name="Promo" placeholder="Promo" required="required" />
+		<input type="text" name="Promo2" placeholder="Promo2" required="required" />
 
+        <input type="text" name="StateHoliday" placeholder="State Holiday" required="required" />
+        <input type="text" name="SchoolHoliday" placeholder="School Holiday" required="required" />
+		<input type="text" name="CompetitionDistance" placeholder="Competition Distance" required="required" />
 
-       <label for="schoolHoliday">School Holiday</label>
-    <input type="text" class="form-control" id="schoolHoliday" aria-describedby="emailHelp">
-      <label for="competitionD">Competition Distance</label>
-    <input type="text" class="form-control" id="competitionD" aria-describedby="emailHelp">
-      <label for="date">Date</label>
-    <input type="date" class="form-control" id="date" aria-describedby="emailHelp">
-      <label for="storeType">Store Type</label>
-    <input type="text" class="form-control" id="storeType" aria-describedby="emailHelp">
-      <label for="assortment">Assortment</label>
-    <input type="text" class="form-control" id="assortment" aria-describedby="emailHelp">
-      <label for="season">Season</label>
-    <input type="text" class="form-control" id="season" aria-describedby="emailHelp">
+        <input type="date" name="date" placeholder="Date" required="required" />
+        <input type="text" name="StoreType" placeholder="Store Type" required="required" />
+		<input type="text" name="Assortment" placeholder="Assortment" required="required" />
 
-      <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict sales</button>
 
     </form>
 
    <br>
    <br>
    {{ prediction_text }}
+
  </div>
-
-
 
 {% endblock %}

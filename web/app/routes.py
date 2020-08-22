@@ -1,6 +1,7 @@
 from app import app
 import numpy as np
-import datetime
+import pandas as pd
+from datetime import datetime
 from flask import Flask, render_template, flash, redirect, request
 from app.forms import LoginForm
 from app.prediction_notes import sales_detail, \
@@ -9,6 +10,11 @@ from app.prediction_notes import sales_detail, \
 import pickle
 from app.models.model_classes import Preprocessing, Regressor
 
+columns = ["Customers", "Open", "Promo", "Promo2",
+
+           "StateHoliday", "SchoolHoliday", "CompetitionDistance",
+           ""
+           "Date", "StoreType", "Assortment", ]
 
 
 class CustomUnpickler(pickle.Unpickler):
@@ -58,16 +64,25 @@ def predict():
     # to:do add logic to determine which model to load based the type pf prediction
 
     model_result = request.form.values()
+    # print(model_result)
     features = []
     for val in model_result:
-        if val is datetime:
-            features.append(datetime)
+        if "-" in val:
+            dt = datetime.strptime(val, '%Y-%m-%d')
+            date = dt.date()
+            features.append(date)
         else:
             features.append(int(val))
+    [print(f, type(f)) for f in features]
+    data = np.array(features)
+    data=data.reshape(1, len(columns))
+    data = pd.DataFrame(data, columns=columns)
 
-    # model = load_model(model_name="21-08-2020-16-32-31-00.pkl")
+    print(data.columns.values)
 
-    prediction = model.predict(features)
+    data = model.predict(data)
+
+    prediction = model.predict(data)
 
     return render_template("prediction.html", prediction=prediction)
 
