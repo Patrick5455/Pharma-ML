@@ -1,2 +1,8 @@
 10 Academy Batch 3 - Week 5 Challenge.pdf
 *.ipynb_checkpoints
+<<<<<<< HEAD
+*.config
+=======
+>>>>>>> fef695eaa11f3a653a112b9933845269faaceb0d*
+*.xml
+*.idea
